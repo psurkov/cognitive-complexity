@@ -5,9 +5,12 @@
     <vendor>psurkov</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <notificationGroup id="File Extension Notification Group" displayType="BALLOON"/>
+        <notificationGroup id="Current Kotlin Method Notification Group" displayType="BALLOON"/>
     </extensions>
 
     <actions>
@@ -19,6 +22,11 @@
         <action id="com.github.psurkov.cognitivecomplexity.actions.CurrentFileExtensionAction"
                 class="com.github.psurkov.cognitivecomplexity.actions.CurrentFileExtensionAction"
                 text="Show Current File Extension">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+        <action id="com.github.psurkov.cognitivecomplexity.actions.CurrentKotlinMethodAction"
+                class="com.github.psurkov.cognitivecomplexity.actions.CurrentKotlinMethodAction"
+                text="Current Kotlin Method">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
     </actions>
